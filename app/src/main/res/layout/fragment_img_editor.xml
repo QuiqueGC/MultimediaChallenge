@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context=".ui.fragments.ImgEditorFragment">
+
+    <ja.burhanrashid52.photoeditor.PhotoEditorView
+        android:id="@+id/photoEditorView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="@dimen/largeMargin"
+        android:layout_marginVertical="@dimen/ultraLargeMargin"
+        android:scaleType="centerCrop"
+        app:photo_src="@drawable/crows" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/commonMargin"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btnUndo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/commonMargin"
+            android:background="@color/transparent"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_undo" />
+
+        <ImageButton
+            android:id="@+id/btnRedo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/commonMargin"
+            android:background="@color/transparent"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_redo" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="@dimen/commonMargin">
+
+
+        <CheckBox
+            android:id="@+id/chbBrush"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/commonMargin"
+            android:layout_weight="1"
+            android:button="@drawable/selector_brush"
+            tools:ignore="VisualLintButtonSize,DuplicateSpeakableTextCheck" />
+
+        <CheckBox
+            android:id="@+id/chbEraser"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/commonMargin"
+            android:layout_weight="1"
+            android:button="@drawable/selector_eraser"
+            tools:ignore="VisualLintButtonSize" />
+
+        <CheckBox
+            android:id="@+id/chbFilter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/commonMargin"
+            android:layout_weight="1"
+            android:button="@drawable/selector_filter"
+            tools:ignore="VisualLintButtonSize" />
+
+        <ImageButton
+            android:id="@+id/btnSave"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/largeMargin"
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_save" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:background="@color/white"
+        android:backgroundTint="@color/cardview_dark_background"
+        android:visibility="gone"
+        tools:listitem="@layout/item_filter" />
+
+</FrameLayout>
